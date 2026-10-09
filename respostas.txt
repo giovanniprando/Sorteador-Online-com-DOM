@@ -1,0 +1,31 @@
+
+Qual foi o desafio extra implementado?
+Foram implementados todos os desafios extras (A, B, C, D e E):
+
+Desafio A (Contagem Regressiva): exibe contagem regressiva de 3 segundos na tela desabilitando os botões.
+
+Desafio B (Impedir Repetição): remove o vencedor do textarea usando splice() quando a opção estiver marcada.
+
+Desafio C (Histórico de Vencedores): criando itens <li> dinamicamente no DOM e insere na lista com prepend().
+
+Desafio D (Confetes): integra a biblioteca canvas-confetti via CDN externa.
+
+Desafio E (Acessibilidade): associação de <label>, navegação via Tab, estados de foco destacados (:focus-visible), mensagens com texto/ícones e aria-live="polite".
+
+Quais métodos do DOM você utilizou?
+
+document.querySelector() para seleção de elementos.
+
+addEventListener() para capturar eventos de formulário e clique.
+
+document.createElement() e prepend() para inserção dinâmica no histórico.
+
+classList.add(), classList.remove() e .contains() para visibilidade de seções e controle de animações.
+
+.value, .textContent, .disabled e .focus() para manipulação de atributos e estados do formulário.
+
+Que problema encontrou e como resolveu?
+Ao realizar sorteios seguidos, o CSS não reiniciava a animação do elemento .ganhador-destaque. A solução foi utilizar o truque de reflow void resultado.offsetWidth; no JavaScript entre a remoção e re-adição da classe .revelar. Além disso, para impedir a repetição, o array atualizado sem o ganhador foi reescrito no textarea com .join(', ').
+
+O que você melhoraria em uma próxima versão?
+Adicionaria salvamento automático do histórico e dos itens no localStorage do navegador para persistência dos dados, além de efeitos sonoros de suspense e vitória com a Web Audio API.

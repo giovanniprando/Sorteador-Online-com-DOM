@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorteador Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <section class="card" aria-labelledby="titulo">
+      <p class="eyebrow">⚡ FERRAMENTA RÁPIDA</p>
+      <h1 id="titulo">Sorteador Online</h1>
+      <p class="subtitle">
+        Digite os nomes ou itens separados por vírgula ou por linha.
+      </p>
+
+      <form id="sorteadorForm" novalidate>
+        <label for="listaEntrada">Itens para o sorteio</label>
+        <textarea
+          id="listaEntrada"
+          rows="6"
+          placeholder="Exemplo: Ana, Bruno, Carla, Daniel"
+          aria-describedby="ajudaEntrada status"
+        ></textarea>
+        <p id="ajudaEntrada" class="help-text">
+          Separe os itens por vírgula ou pressione Enter.
+        </p>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="naoRepetir" name="naoRepetir">
+          <label for="naoRepetir" class="label-inline">Remover vencedor da lista após sortear</label>
+        </div>
+
+        <div class="button-group">
+          <button id="btnSortear" class="btn-primary" type="submit">
+            SORTAER AGORA
+          </button>
+          <button id="btnLimpar" class="btn-secondary" type="button">
+            LIMPAR
+          </button>
+        </div>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="resultadoBox" class="resultado-container hidden" aria-live="polite">
+        <p class="result-label">🎉 O grande vencedor foi:</p>
+        <div id="resultado" class="ganhador-destaque">---</div>
+      </section>
+
+      <section id="historicoContainer" class="historico-container hidden">
+        <h2>📜 Histórico de Vencedores</h2>
+        <ul id="historicoLista"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
